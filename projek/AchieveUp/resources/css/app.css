@@ -1,0 +1,151 @@
+@import "tailwindcss";
+@source "../views";
+@tailwind utilities;
+
+@theme {
+    --font-primary: "Poppins", sans-serif;
+
+    --color-primary: #6041CE;
+    --color-secondary: #FB8500;
+    --color-ternary: #03045E;
+
+    --color-dark-text: #333333;
+    --color-primary-text: #6041CE;
+    --color-secondary-text: #FB8500;
+  }
+
+@keyframes ripple-animation {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.6);
+    animation: ripple-animation 0.6s linear;
+}
+
+/* Primary Button */
+.button-primary {
+    @apply relative inline-flex items-center justify-center font-semibold transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg overflow-hidden text-white bg-primary hover:bg-purple-700 px-4 py-2 h-10 text-sm sm:px-6 sm:py-3 sm:h-12 sm:text-base rounded-[12px];
+}
+
+/* Secondary Outline Button */
+.button-secondary {
+    @apply relative inline-flex items-center justify-center font-semibold transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg overflow-hidden text-primary bg-transparent border-2 border-primary hover:bg-primary hover:text-white px-4 py-2 h-10 text-sm sm:px-6 sm:py-3 sm:h-12 sm:text-base rounded-[12px];
+}
+
+/* Medium Primary Button */
+.button-primary-medium {
+    @apply relative inline-flex items-center justify-center font-semibold transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg overflow-hidden text-white bg-primary hover:bg-purple-700 px-4 py-2 h-10 text-sm sm:px-6 sm:py-2 sm:h-10 sm:text-sm rounded-[8px];
+}
+
+/* Medium Secondary Outline Button */
+.button-secondary-medium {
+    @apply relative inline-flex items-center justify-center font-semibold transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg overflow-hidden text-primary bg-transparent border-2 border-primary hover:bg-primary hover:text-white px-4 py-2 h-10 text-sm sm:px-6 sm:py-2 sm:h-10 sm:text-sm rounded-[8px];
+}
+
+.button-approve {
+    @apply relative inline-flex items-center justify-center font-semibold transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg overflow-hidden text-white bg-green-600 px-4 py-2 h-10 text-sm sm:px-6 sm:py-3 sm:h-12 sm:text-base rounded-[12px];
+}
+
+.button-reject {
+    @apply relative inline-flex items-center justify-center font-semibold transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg overflow-hidden text-white bg-red-600 px-4 py-2 h-10 text-sm sm:px-6 sm:py-3 sm:h-12 sm:text-base rounded-[12px];
+}
+
+/* Action Buttons (Detail, Edit, Delete) */
+.action-button {
+    @apply w-10 h-10 flex items-center justify-center border rounded-[12px] transition-all duration-200 ease-in-out;
+}
+
+.detail-button {
+    @apply border-blue-500 text-blue-600 hover:bg-blue-50;
+}
+
+.edit-button {
+    @apply border-yellow-500 text-yellow-600 hover:bg-yellow-50;
+}
+
+.delete-button {
+    @apply border-red-500 text-red-600 hover:bg-red-50 cursor-pointer;
+}
+
+.approve-button {
+    @apply border-green-500 text-green-600 hover:bg-green-50;
+}
+
+.reject-button {
+    @apply border-red-500 text-red-600 hover:bg-red-50 cursor-pointer;
+}
+
+.input {
+    @apply w-full h-12 px-4 border border-gray-300 rounded-[8px] bg-white/60 backdrop-blur-md 
+           focus:ring-2 focus:ring-[#6041CE] focus:outline-none focus:border-[#6041CE]
+           transition-all duration-300 ease-in-out text-base text-gray-800 
+           placeholder-gray-400 hover:bg-white/80;
+}
+
+.search-list {
+    @apply w-full h-[40px] px-4 border border-gray-300 rounded-[8px] bg-white/60 backdrop-blur-md 
+           focus:ring-2 focus:ring-[#6041CE] focus:outline-none focus:border-[#6041CE]
+           transition-all duration-300 ease-in-out text-base text-gray-800 
+           placeholder-gray-400 hover:bg-white/80;
+}
+
+.sidebar-menu-button {
+    @apply flex items-center py-4 px-4 rounded-[8px] hover:bg-[#DFD9F5] text-sm text-gray-800;
+}
+
+.sidebar-menu-button.sidebar-active:hover {
+    @apply bg-none; 
+    cursor: default; 
+    @apply bg-[#F0EDFB] text-[#6041CE] font-semibold;
+}
+
+.sidebar-active {
+    @apply bg-[#F0EDFB] text-[#6041CE] font-semibold;
+}
+
+
+/* TABLE */
+table.dataTable thead th {
+  @apply px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-gray-50;
+}
+
+table.dataTable tbody tr {
+  @apply bg-white divide-y divide-gray-200;
+}
+
+table.dataTable tbody td {
+  @apply px-6 py-4 whitespace-nowrap text-sm text-gray-900;
+}
+
+table.dataTable tbody tr:hover {
+  @apply bg-gray-100;
+}
+
+/* Pagination and info */
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+  @apply px-3 py-1 rounded-md border border-gray-300 text-gray-700 hover:bg-gray-200 cursor-pointer;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+  @apply bg-blue-600 text-white border-blue-600;
+}
+
+.dataTables_length label, 
+.dataTables_filter label {
+  @apply flex items-center space-x-2 text-gray-700 font-semibold text-sm;
+}
+
+.dataTables_length select,
+.dataTables_filter input {
+  @apply border border-gray-300 rounded px-2 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500;
+}
